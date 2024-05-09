@@ -23,12 +23,15 @@ function startCountdown() {
   console.log("startCountdown called!");
 
   // Your code goes here ...
-
+  
+  startBtn.disabled = 'true'; 
   const remainingSeconds = document.getElementById('time')
+  
   timer = setInterval(() =>{
     remainingSeconds.innerHTML = remainingTime
     if(remainingTime === 0){
       showToast("Lift off! 🚀");
+      startBtn.disabled = false;  
       clearInterval(timer);
     }
     
@@ -40,7 +43,6 @@ function startCountdown() {
     }
     remainingTime --;
   }, 1000)
-  return 
 }
 
 
